@@ -38,14 +38,14 @@ The following methodology was designed to compare the performance of a standalon
 
 3. **Red-Team Architecture** — We designed a dedicated architecture for our red-teaming system, consisting of two modules: (1) Reasoning Module G, the Red-Team Agent which guides which actions to try based on the attack goal and on the world model’s proposition; and (2) Simulator Module Wϕ, the World Model, which predicts what happens given an action. In summary, the world model operates as a simulator and as an engine or conducting internal thought experiments. However, the reasoning part to achieve the objective takes place within the Red-Team-Agent layer, which leverages this world model to guide its decisions (See Figure 2 for the architecture).
 
-4. **World Model Design** — The world model’s architecture is based on Chae et al. (2025) [2] work. We employ a fine-tuned Qwen2.5-1.5B Base model, trained on a specific dataset. Given an attack objective, the conversation history, the most recent observation, and a set of candidate actions, the world model predicts the next observation (i.e., the system state) corresponding to each possible action:
+4. **World Model Design** — The world model’s architecture is based on Chae et al. (2025) [2] work. We employ a fine-tuned Qwen2.5-1.5B Base model, trained on a specific dataset. Given an attack objective, the conversation history, the most recent observation, and a set of candidate actions, the world model predicts the next observation (i.e., the system state) for each possible action:
 
 <p align="center">
   <img src="documents/equation_world_model.png" alt="Figure 3. World Model formulation." width="30%">
 </p>
 <p align="center"><em>Figure 3. World Model formulation.</em></p>
 
-5. **Data Collection** — We aimed to fine-tune the world model; therefore, we constructed a small dataset by collecting conversations from the environment. The resulting dataset is available at [dataset](training/dataset/dataset_preprocessed.json), and the corresponding configuration files can be found at [configurations](data_collection/instructions):
+5. **Data Collection** — We aimed to fine-tune the world model; therefore, we constructed a small dataset by collecting conversations from the environment. The resulting dataset is available at [dataset](training/dataset/dataset_preprocessed.json), and the corresponding details can be found at [configurations](data_collection/instructions):
 
 <p align="center">
   <img src="documents/equation_dataset.png" alt="Figure 4. Dataset formulation." width="30%">
