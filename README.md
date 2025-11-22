@@ -57,7 +57,7 @@ The following methodology was designed to compare the performance of a standalon
 The full procedure is available in the [full report](documents/report.pdf).
 
 <p align="center">
-  <img src="documents/architecture_agentic_system.png" alt="Figure 1. Architecture of the Travel Planning agentic system." width="50%">
+  <img src="documents/architecture_agentic_system.png" alt="Figure 1. Architecture of the Travel Planning agentic system." width="30%">
 </p>
 <p align="center"><em>Figure 1. Architecture of the Travel Planning agentic system.</em></p>
 
