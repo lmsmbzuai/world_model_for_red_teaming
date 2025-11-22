@@ -93,7 +93,7 @@ world_model_for_red_teaming/
 ## 🧪 Installation & Usage
 
 This repository runs the Travel Planning Agentic System with the possibility to modify the red-team system architecture. Three configurations are available:
-- (1) LLM-Only: single-shot attack generation; 
+- (1) LLM-Only
 - (2) LLM + Reasoning Loop
 - 🚨 (3) LLM + Reasoning Loop + World Model --not available in the repository, contact me if you want to access to the fine-tuned model
 
