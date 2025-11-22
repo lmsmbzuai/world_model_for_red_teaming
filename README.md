@@ -80,7 +80,7 @@ world_model_for_red_teaming/
 │
 ├── 📊 experiment/ # Source code used to run the experiment
 │
-├── 📁 environment/ # Source code to run instantiate and run the Travel Planning agentic system
+├── 📁 environment/ # Source code to instantiate and run the Travel Planning agentic system
 │ ├── messaging/ # Module responsible for communication protocols between agents
 │ └── red_teaming/ # Module to implement the red-teaming framework for adversarial testing
 │
