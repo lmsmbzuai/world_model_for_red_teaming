@@ -57,12 +57,12 @@ The following methodology was designed to compare the performance of a standalon
 The full procedure is available in the [full report](documents/report.pdf).
 
 <p align="center">
-  <img src="documents/architecture_agentic_system.png" alt="Figure 1. Architecture of the Travel Planning agentic system." width="600">
+  <img src="documents/architecture_agentic_system.png" alt="Figure 1. Architecture of the Travel Planning agentic system." width="50%">
 </p>
 <p align="center"><em>Figure 1. Architecture of the Travel Planning agentic system.</em></p>
 
 <p align="center">
-  <img src="documents/architecture_red_team.png" alt="Figure 2. Architecture of the Red-Team system." width="100%">
+  <img src="documents/architecture_red_team.png" alt="Figure 2. Architecture of the Red-Team system." width="80%">
 </p>
 <p align="center"><em>Figure 2. Architecture of the Red-Team system.</em></p>
 
