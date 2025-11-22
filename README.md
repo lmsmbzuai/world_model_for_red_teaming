@@ -41,14 +41,14 @@ The following methodology was designed to compare the performance of a standalon
 4. **World Model Design** — The world model’s architecture is based on Chae et al. (2025) [2]. We employ a fine-tuned Qwen2.5-1.5B Base model, trained on a task-specific dataset. Given the conversation history, the most recent observation, and a set of candidate actions, the world model predicts the next observation (i.e., the system state) corresponding to each possible action:
 
 <p align="center">
-  <img src="documents/equation_world_model.png" alt="Figure 3. World Model formulation." width="70%">
+  <img src="documents/equation_world_model.png" alt="Figure 3. World Model formulation." width="30%">
 </p>
 <p align="center"><em>Figure 3. World Model formulation.</em></p>
 
 5. **Data Collection** — We aimed to fine-tune the world model; therefore, we constructed a small dataset by collecting conversations from the environment. The resulting dataset is available at [dataset](training/dataset/dataset_preprocessed.json), and the corresponding configuration files can be found at [configurations](data_collection/instructions):
 
 <p align="center">
-  <img src="documents/equation_dataset.png" alt="Figure 4. Dataset formulation." width="70%">
+  <img src="documents/equation_dataset.png" alt="Figure 4. Dataset formulation." width="30%">
 </p>
 <p align="center"><em>Figure 4. Dataset formulation.</em></p>
 
