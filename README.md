@@ -69,7 +69,7 @@ The full procedure is available in the [full report](documents/report.pdf).
 ---
 
 ## 🪾Repository Structure
-
+```
 world_model_for_red_teaming/
 │
 ├── 📄 README.md # Project overview and setup instructions
@@ -87,7 +87,7 @@ world_model_for_red_teaming/
 ├── 📁 documents/ # Report and documents for the README file
 │
 └── 📁 data_collection/ # Source code used to collect data from the environment
-
+```
 ---
 
 ## 🧪 Installation & Usage
