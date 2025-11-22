@@ -38,15 +38,19 @@ The following methodology was designed to compare the performance of a standalon
 
 3. **Red-Team Architecture** — We designed a dedicated architecture for our red-teaming system, consisting of two modules: (1) Reasoning Module G, the Red-Team Agent which guides which actions to try based on the attack goal and on the world model’s proposition; and (2) Simulator Module Wϕ, the World Model, which predicts what happens given an action. In summary, the world model operates as a simulator and as an engine or conducting internal thought experiments. However, the reasoning part to achieve the objective takes place within the Red-Team-Agent layer, which leverages this world model to guide its decisions (See Figure 2 for the architecture).
 
-4. **World Model Design** — The world model’s architecture is based on Chae et al. (2025) [2]. We employ a fine-tuned Qwen2.5-1.5B Base model, trained on a task-specific dataset. Given the conversation history, the most recent observation, and a set of candidate actions, the world model predicts the next observation (i.e., the system state) corresponding to each possible action: 
+4. **World Model Design** — The world model’s architecture is based on Chae et al. (2025) [2]. We employ a fine-tuned Qwen2.5-1.5B Base model, trained on a task-specific dataset. Given the conversation history, the most recent observation, and a set of candidate actions, the world model predicts the next observation (i.e., the system state) corresponding to each possible action:
 
-![Figure 3. World Model](documents/equation_world_model.png)
-*World Model.*
+<p align="center">
+  <img src="documents/equation_world_model.png" alt="Figure 3. World Model formulation." width="70%">
+</p>
+<p align="center"><em>Figure 3. World Model formulation.</em></p>
 
 5. **Data Collection** — We aimed to fine-tune the world model; therefore, we constructed a small dataset by collecting conversations from the environment. The resulting dataset is available at [dataset](training/dataset/dataset_preprocessed.json), and the corresponding configuration files can be found at [configurations](data_collection/instructions):
 
-![Figure 4. Dataset](documents/equation_dataset.png)
-*Dataset.*
+<p align="center">
+  <img src="documents/equation_dataset.png" alt="Figure 4. Dataset formulation." width="70%">
+</p>
+<p align="center"><em>Figure 4. Dataset formulation.</em></p>
 
 6. **Experiment** — The objective of the experiment is to evaluate the performance of three autonomous red-team architectures: (A) LLM-Only: single-shot attack generation; (B) LLM + Reasoning Loop: the architecture that follows steps 2–4 and 6 in Figure 2; and (C) LLM + Reasoning Loop + World Model: the same as (B) but augmented with a learned world model used to simulate ot+1.  For each architecture, there is a specific user request and the red-team agent pursues three distinct attack objectives. For every objective, we perform ten independent runs, each limited to at most fifty turns. Hence, the experimental setup comprises 1 × 3 × 3 × 10 = 90 runs and a maximum of 90 × 50 = 4500 turns in total. To enable comparison across architectures, we based our evaluation on a specific metric: ot+1 Success Rate (OT1SR). More precisely, in our formulation, ot+1 refers both to the message sent by the Planner agent following the action at, and to the corresponding response from the recipient. However, this metric operates one layer below, as it evaluates only the message sent by the Planner agent after at, rather than considering the two subsequent messages.
 
