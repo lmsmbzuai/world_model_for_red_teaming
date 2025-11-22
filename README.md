@@ -76,7 +76,7 @@ world_model_for_red_teaming/
 ├── 📄 requirements.txt # Python dependencies
 ├── ▶️ run_environment.py # Script to run the environment
 │
-├── 🧠 training/ # Source code used for fine-tuning the world model --contains the dataset
+├── 🧠 training/ # Source code used for fine-tuning the world model --Contains the dataset
 │
 ├── 📊 experiment/ # Source code used to run the experiment
 │
@@ -95,7 +95,7 @@ world_model_for_red_teaming/
 This repository runs the Travel Planning Agentic System with the possibility to modify the red-team system architecture. Three configurations are available:
 - (1) LLM-Only
 - (2) LLM + Reasoning Loop
-- 🚨 (3) LLM + Reasoning Loop + World Model --not available in the repository, contact me if you want to access to the fine-tuned model
+- 🚨 (3) LLM + Reasoning Loop + World Model --The fine-tuned world model is not included in the repository. Please contact me if you would like access to it.
 
 When you run the environment, the messages exchanged between agents are displayed in the terminal.
 If you use architecture (2), a JSON file will be generated in the project’s root directory at the end of execution. This file contains the reasoning traces of the red-team agent.
