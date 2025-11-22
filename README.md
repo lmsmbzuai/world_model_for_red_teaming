@@ -54,7 +54,7 @@ The following methodology was designed to compare the performance of a standalon
 
 6. **Experiment** — The objective of the experiment is to evaluate the performance of three autonomous red-team architectures: (A) LLM-Only: single-shot attack generation; (B) LLM + Reasoning Loop: the architecture that follows steps 2–4 and 6 in Figure 2; and (C) LLM + Reasoning Loop + World Model: the same as (B) but augmented with a learned world model used to simulate ```ot+1```.  For each architecture, there is a specific user request and the red-team agent pursues three distinct attack objectives. For every objective, we perform ten independent runs (with the same seed for the three architectures) each limited to at most fifty turns. Hence, the experimental setup comprises 1 × 3 × 3 × 10 = 90 runs and a maximum of 90 × 50 = 4500 turns in total. To enable comparison across architectures, we based our evaluation on a specific metric: ```ot+1``` Success Rate (```OT1SR```). More precisely, in our formulation, ```ot+1``` refers both to the message sent by the Planner agent following the action ```at```, and to the corresponding response from the recipient. However, this metric operates one layer below, as it evaluates only the message sent by the Planner agent after ```at```, rather than considering the two subsequent messages.
 
-The full procedure is available in the [full report](documents/report.pdf).
+The full procedure is available in the [report](documents/report.pdf).
 
 <p align="center">
   <img src="documents/architecture_agentic_system.png" alt="Figure 1. Architecture of the Travel Planning agentic system." width="30%">
@@ -134,7 +134,7 @@ python3 run_environment.py --architecture 2 # Choose 1, 2 or 3 (default: 1)
 
 ## ⭐️ Results 
 
-As shown in Figure 5, Architecture 2 (LLM + Reasoning Loop) achieves the highest ```ot+1``` success rate. In contrast, Architecture 3, which incorporates the World Model, exhibits the lowest success rate, reaching only 20%. A detailed analysis is available in the [full report](documents/report.pdf). In brief, these results can be attributed to the emergence of a consistent pattern after running the environment hundreds of times. The Recommender agent communicates with the Planner agent only once or twice over the course of 50 turns within the agentic system. This interaction can be characterized as a single-turn attack, since the red-team agent has only one opportunity to achieve its objective. However, single-turn interactions are fundamentally misaligned with the intended purpose of the world model, which is designed to capture the dynamics of a system and predict its future states. Predicting an outcome from a single observation is inherently difficult, which likely explains the poor performance of the world model when used in such a context.
+As shown in Figure 5, Architecture 2 (LLM + Reasoning Loop) achieves the highest ```ot+1``` success rate. In contrast, Architecture 3, which incorporates the World Model, exhibits the lowest success rate, reaching only 20%. A detailed analysis is available in the [report](documents/report.pdf). In brief, these results can be attributed to the emergence of a consistent pattern after running the environment hundreds of times. The Recommender agent communicates with the Planner agent only once or twice over the course of 50 turns within the agentic system. This interaction can be characterized as a single-turn attack, since the red-team agent has only one opportunity to achieve its objective. However, single-turn interactions are fundamentally misaligned with the intended purpose of the world model, which is designed to capture the dynamics of a system and predict its future states. Predicting an outcome from a single observation is inherently difficult, which likely explains the poor performance of the world model when used in such a context.
 
 <p align="center">
   <img src="documents/experiment_results.png" alt="Figure 5. OT1 Success Rate (%) across rounds for different architectures under different attack objectives" width="600">
@@ -153,15 +153,15 @@ ollama serve
 python3 -m experiment.runner.py
 ```
 
-You can access the experiment’s specific configurations in ```./experiment/config.py```, where a distinct random seed was set for each run to ensure reproducibility.
+You can access the experiment’s specific configurations in [config.py](./experiment/config.py), where a distinct random seed was set for each run to ensure reproducibility.
 
 ---
 
 ## 📌 References
 
-[1] Dawson, A., Mulla, R., Landers, N., and Caldwell, S. Airtbench: Measuring autonomous ai red teaming capabilities in language models, 2025.
-[2] Chae, H., Kim, N., iunn Ong, K. T., Gwak, M., Song, G., Kim, J., Kim, S., Lee, D., and Yeo, J. Web agents with world models: Learning and leveraging environment dynamics in web navigation, 2025.
-[3] Nother, J., Singla, A., and Radanovic, G. Benchmarking the robustness of agentic systems to adversarially-induced harms, 2025.
+- [1] Dawson, A., Mulla, R., Landers, N., and Caldwell, S. Airtbench: Measuring autonomous ai red teaming capabilities in language models, 2025.
+- [2] Chae, H., Kim, N., iunn Ong, K. T., Gwak, M., Song, G., Kim, J., Kim, S., Lee, D., and Yeo, J. Web agents with world models: Learning and leveraging environment dynamics in web navigation, 2025.
+- [3] Nother, J., Singla, A., and Radanovic, G. Benchmarking the robustness of agentic systems to adversarially-induced harms, 2025.
 
 ---
 
