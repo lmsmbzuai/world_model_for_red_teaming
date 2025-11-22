@@ -32,7 +32,7 @@ For theoretical background and detailed literature review, see the [full report]
 
 The following methodology was designed to compare the performance of a standalone LLM and an LLM enhanced with a world model:
 
-1. **Environment** — We implemented a custom agentic environment inspired by Nother et al. (2025). The Travel Planning agentic system was built entirely from scratch without using any existing framework (See Figure 1 for the architecture). All agents use the Llama-3-8B model, except for the red-team agent, which uses Qwen-2.5-7B-Instruct.
+1. **Environment** — We implemented a custom agentic environment inspired by Nother et al. (2025) [3]. The Travel Planning agentic system was built entirely from scratch without using any existing framework (See Figure 1 for the architecture). All agents use the Llama-3-8B model, except for the red-team agent, which uses Qwen-2.5-7B-Instruct.
 
 2. **Threat Model** — This work does not focus on assessing the security of a particular agentic system. Instead, it aims to compare the performance of different red-team architectures under equivalent experimental conditions. Within our setup, we assume that the adversary has full control over the Recommender Agent, whose objective is to carry out a specific attack through interactions with the Planner Agent.
 
