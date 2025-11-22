@@ -145,8 +145,7 @@ As shown in Figure 5, Architecture 2 (LLM + Reasoning Loop) achieves the highest
 
 ## 🫆 Reproducibility
 
-The experiment can be reproduced, but you must contact me first to access to the fine-tuned world model. After that, note that it may take more than 3 hours to complete, even when using a GPU. The procedure is as follows, based on the same setup described in the Installation & Usage section.
-
+To reproduce the experiment, not only run the nevironment, please contact me to request access to the fine-tuned world model. Be aware that the process can take over three hours, even on GPU. The steps below assume the same setup as described in Installation & Usage:
 ```bash 
 ollama serve 
 
